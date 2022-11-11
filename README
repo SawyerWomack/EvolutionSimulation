@@ -12,13 +12,6 @@ every time it eats it gets replenished back to 100
 Reproduce:
 creates a new organism but adds 1 or -1 to every trait in it
 
-
-
-------Predator--------:
-Health:
-
-
-
 - Sight:
 x=0 is blind in the night but a range of 10 tiles during the day
 
@@ -32,3 +25,14 @@ x=0 is .1 second in between moves but uses 5 hunger points per move
 x=5 is .5 seconds in between moves but uses 2.5 hunger points per move
 
 x=10 is 1 second in between moves but uses 1 hunger point per move
+
+-Sleep:
+x<=5 is sleeping during the night
+x>5 is sleeping during the day
+
+------Predator--------:
+Gets food from killing prey
+
+
+-----Prey----------:
+Gets food from resources placed around the map
