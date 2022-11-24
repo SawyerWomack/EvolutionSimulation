@@ -36,3 +36,12 @@ Gets food from killing prey
 
 -----Prey----------:
 Gets food from resources placed around the map
+
+
+-----AI behavior-----
+
+Prey:
+Priority 1: stay away from predators
+Priority 2:get food
+
+
