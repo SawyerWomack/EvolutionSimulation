@@ -45,9 +45,8 @@ func _process(delta):
 	organism.checkHealth()
 	
 	if(emitting):
-		print("emit")
 		if(organism.particles.emitting == false):
-			
+			organism.removeData()
 			queue_free()
 	if(organism.moving):
 			var test = organism.move(delta)

@@ -43,7 +43,6 @@ func _process(delta):
 func scatterTraits():
 	for key in traits.keys():
 		var num = randi() % 10 + 1
-		print(num)
 		traits[key] = num
 func emit():
 	pass

@@ -73,7 +73,6 @@ func changeBarData(key, input, adding):
 	else:
 		data[key][input-1] -= 1
 	get_tree().call_group("graphs", "addToBarData", key,data[key])
-	print(data)
 #take a vector2 and changes it to the relative grid size of the map
 func convertToGrid(x,y):
 	return Vector2(int(x / resolution.x), int(y/ resolution.y))

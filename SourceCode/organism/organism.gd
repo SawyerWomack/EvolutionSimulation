@@ -220,7 +220,6 @@ func setTraits():
 
 func updateData():
 	if(updated):
-		print("damn")
 		return
 	Grid.data[type].population += 1
 	Grid.data[type].speed[get_parent().traits.speed - 1] += 1
@@ -260,14 +259,13 @@ func _on_mouth_mouse_exited():
 
 func eat():
 	hunger = 100
-	if(len(foodInRange) != 0):
-		foodInRange.remove(0)
+	
 	breed()
 
 func _on_mouth_area_entered(area):
 	if(type == "prey" && area.name == "mouth" && area.get_parent().type == "predator"):
 		if(!ate):
-			area.get_parent().breed()
+			area.get_parent().eat()
 			get_parent().emit()
 			get_parent().get_node("Icon").visible = false
 			ate = true
