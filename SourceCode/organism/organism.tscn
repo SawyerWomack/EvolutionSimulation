@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://organism/organism.gd" type="Script" id=1]
+[ext_resource path="res://Prey/Pre.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 38.1182
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 36.71
+
+[node name="Organism" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="eyes" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eyes"]
+shape = SubResource( 1 )
+
+[node name="mouth" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouth"]
+shape = SubResource( 2 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 32
+one_shot = true
+explosiveness = 0.51
+randomness = 0.71
+texture = ExtResource( 2 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 293.79
+angular_velocity_random = 1.0
+angle = 720.0
+angle_random = 1.0
+scale_amount = 0.1
+scale_amount_random = 0.38
+
+[connection signal="area_entered" from="mouth" to="." method="_on_mouth_area_entered"]
+[connection signal="area_exited" from="mouth" to="." method="_on_mouth_area_exited"]
+[connection signal="input_event" from="mouth" to="." method="_on_mouth_input_event"]
+[connection signal="mouse_entered" from="mouth" to="." method="_on_mouth_mouse_entered"]
+[connection signal="mouse_exited" from="mouth" to="." method="_on_mouth_mouse_exited"]

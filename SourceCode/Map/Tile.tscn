@@ -1,0 +1,6 @@
+[gd_scene format=2]
+
+[node name="Tile" type="Node2D"]
+
+[node name="Icon" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.988235 )
